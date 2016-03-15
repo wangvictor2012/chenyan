@@ -13,13 +13,8 @@ def encodechinese(chinese):
     sys.setdefaultencoding('utf-8')
     return chinese.encode('utf-8')
 
-class TwoDcodeForm(Form):
-    #datachoice = database_machinetype()
-    message_TwoDcode = TextAreaField('message', validators = [Required()])
-    submit_commit = SubmitField(encodechinese("提 交"))
-    submit_download = SubmitField(encodechinese("下 载"))
-    submit_gethosts = SubmitField(encodechinese("下载最新Hosts"))
-    
+def test():
+    #This is just a test for github.    
 
 
 
