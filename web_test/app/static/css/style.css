@@ -25,9 +25,18 @@ h3 {
     line-height: 30px;
 }
 
+a
+{
+    text-decoration:none;
+    font-size:12px;
+    color:#288bc4;
+}
+a:hover
+{
+    text-decoration:underline;
+}
 
-
-/***** Top content *****/
+/***** login form *****/
 
 .inner-bg {
     padding: 100px 0 170px 0;
@@ -62,7 +71,7 @@ h3 {
 
 .form-bottom {
 	padding: 25px 25px 30px 25px;
-	height: 400px;
+	height: 430px;
 	background: #eee;
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 	text-align: center;
@@ -72,7 +81,7 @@ h3 {
 
 
 .form-bottom form .input-error {
-	border-color: #4aaf51;
+	border-color: #ff0000;
 }
 
 .form_in{
@@ -83,7 +92,7 @@ h3 {
 .btn_main1 {
     height: 50px;
     width: 47%;
-    margin-top: 2%;
+    margin-top: 5%;
     float: left;
 
 }
@@ -91,15 +100,89 @@ h3 {
 .btn_main2 {
     height: 50px;
     width:47%;
-    margin-top: 2%;
+    margin-top: 5%;
     margin-left: 6%;
     float: left;
 }
 
 .btn_main {
+	margin-top: 3%;
 	width:100%;
 	height: 50px;
 }
+.label_in{
+    margin-top: 0px;
+	padding:2px 3px;
+	letter-spacing:3px;            
+	float:left;            
+	width:120px;
+	height:40px;
+	line-height:60px;
+
+}
+
+.validate_code {
+background-image: url(../img/validate_code/code.jpg);
+font-family: Arial;
+font-style: italic;
+font-weight: bolder;
+letter-spacing: 10%;
+font-size: 25px;
+width: 50%;
+color: #2255BB;
+border: 1;
+padding: 5px 5%;
+float:left;
+}
+
+
+
+/***** Part register *****/
+
+.form-register {
+	padding: 25px 25px 30px 25px;
+	height: 80%;
+	background: #eee;
+	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+	text-align: center;
+}
+
+.btn_register {
+	margin-top: 3%;
+	width:100%;
+	height: 50px;
+}
+.form-margin{
+	margin-top: 5%;
+}
+
+.form_in_validate{
+	height:50px;
+	width:60%;
+}
+
+.validate_code_register{
+background-image: url(../img/validate_code/code.jpg);
+font-family: Arial;
+font-style: italic;
+font-weight: bolder;
+letter-spacing: 10%;
+font-size: 25px;
+width: 40%;
+color: #2255BB;
+border: 1;
+padding: 5px 5%;
+float:right;
+}
+
+.btn_register{
+	margin-top: 5%;
+}
+
+
+
+
+
 
 
 

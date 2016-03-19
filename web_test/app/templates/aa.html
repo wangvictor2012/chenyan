@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>JS生成验证码</title>
+<style type="text/css">
+.code {
+background-image: url(../static/img/validate_code/code.jpg);
+font-family: Arial;
+font-style: italic;
+font-size: 1;
+color: #2255BB;
+border: 0;
+padding: 2px 3px;
+letter-spacing: 3px;
+font-weight: bolder;
+}
+.unchanged {
+border: 0;
+}
+</style>
+<script language="javascript" type="text/javascript"> 
+function createCode() {
+	  code = "";
+	  var codeLength = 4;//验证码的长度  
+	  var checkCode = document.getElementById("checkCode");
+	  var selectChar = new Array('A','B','C','D','E','F','G','H','I','J');//所有候选组成验证码的字符，当然也可以用中文的  
+	  var charIndex = Math.floor(Math.random() * 6);
+	  for (var i = 0; i < codeLength; i++) {
+	    code += selectChar[charIndex+i];
+	  }
+	  //alert(code);
+	  if (checkCode) {
+	    checkCode.className = "code";
+	    checkCode.value = code;
+	  }
+	}
+</script>
+</head>
+<body onload="createCode()">
+  <input type="text" onclick="createCode()" readonly="readonly" id="checkCode" class="unchanged" /><br />
+  <input id="Button1" onclick="validate();" type="button" value="确定" />
+</body>
+</html>
+
+<input type="text" onclick="createCode()" readonly="readonly" id="checkCode" class="img-rounded validate_code" value={{validate_code[0:3]}}/>  

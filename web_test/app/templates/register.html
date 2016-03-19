@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3 form-box">
+        <div class="form-top">
+            <h2>注册</h2>
+        </div>
+        <div class="form-register">
+        <form method="post" role="form">
+                 {{form.hidden_tag()}}
+                <div class="input-group" >
+                    <span class="input-group-addon">学号</span>
+                    {{form.StudentID(placeholder="Student ID...", class="form-control form_in")}}
+                    <!--<input type="text" name="form-student-ID" placeholder="Student ID..." class="form-control form_in" id="form-username">-->
+                </div>
+                    {% if form.errors.StudentID %}
+                     {% for error in form.errors.StudentID %}
+                     <span style="color: red; float:left">[{{ error }}]</span>
+                    {% endfor %}<br>
+                    {% endif %}
+               
+
+                <div class="input-group form-margin">
+                    <span class="input-group-addon">手机</span>
+                    {{form.UserPhone(placeholder="Phone Number...", class="form-control form_in")}}
+                    <!--<input type="password" name="form-phone" placeholder="Phone Number..." class="form-control form_in" id="form-password">-->
+                </div>
+                {% if form.errors.UserPhone %}
+                     {% for error in form.errors.UserPhone %}
+                     <span style="color: red; float:left">[{{ error }}]</span>
+                    {% endfor %}<br>
+                    {% endif %}
+                
+
+                 <div class="input-group form-margin">
+                    <span class="input-group-addon">密码</span>
+                    {{form.PassWord1(placeholder="Password...", class="form-control form_in")}}
+                    <!--<input type="password" name="form-password" placeholder="Secret Number..." class="form-control form_in" id="form-password">-->
+                    
+                </div>
+                    {% if form.errors.PassWord1 %}
+                     {% for error in form.errors.PassWord1 %}
+                     <span style="color: red; float:left">[{{ error }}]</span>
+                    {% endfor %}<br>
+                    {% endif %}
+
+                <div class="input-group form-margin">
+                    <span class="input-group-addon">再输入</span>
+                    {{form.PassWord2(placeholder="Password Again...", class="form-control form_in")}}
+                    <!--<input type="password" name="form-password" placeholder="Secret Number Again..." class="form-control form_in" id="form-password">-->
+                    
+                </div>
+                    {% if form.errors.PassWord1 %}
+                        {% for error in form.errors.PassWord1 %}
+                        <span style="color: red; float:left">[{{ error }}]</span>
+                        {% endfor %}<br>
+                    {% endif %}
+                
+
+                <div class="input-group form-margin">
+                    <span class="input-group-addon">验证码</span>
+                    {{form.Validate(placeholder="Validate letters...", class="form-control", style="height:50px; width:50%; border-radius:0px 4px 4px 0px")}}
+                    <!--<input type="password" name="form-validate" placeholder="Validate Number..." class="form-control form_in" id="form-password">-->
+                    <input type="text" onclick="createCode()" readonly="readonly" id="checkCode" class="img-rounded validate_code_register" value={{validate_code[0:4]}}>  
+                </div>
+
+                    {% if form.errors.Validate %}
+                        {% for error in form.errors.Validate %}
+                        <span style="color: red; float:left">[{{ error }}]</span>
+                        {% endfor %}<br>
+                    {% endif %}
+                
+
+                
+
+                {{form.register(class="btn btn-primary btn_register")}}
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
