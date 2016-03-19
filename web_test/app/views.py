@@ -28,7 +28,7 @@ def login():
     error_message = []
     if not form.login.data:
         validate_code()
-    print session['validate']
+
     if form.login.data:
         userphone = str(request.form.get('form-userphone'))
         password = str(request.form.get('form-password'))
